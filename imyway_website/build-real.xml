@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project name="imyway" default="pack" basedir="." >
+	<!-- properies -->
+	<property file="build.properties"/>
+	<property name="src.dir" value="src" />
+	<property name="report.dir" value="report" />
+	<property name="lib.dir" value="WebContent/WEB-INF/lib" />
+	<property name="dist.dir" value="dist" />
+	<property name="doc.dir" value="doc" />
+	<property name="build.dest" value="build" />
+	<property name="classes.dir" value="${build.dest}/classes" />
+	<property name="tomcat.dir" value="/server/apache-tomcat-7.0.64" />
+	<property name="jar.name" value="starbucks.jar" />
+	<property name="war.dir" value="war"/>
+	<property name="env.JAVA_HOME" location="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home" />
+	<property name="filter.overwrite" value="true" />
+
+	<!-- 定义classpath -->
+	<path id="master-classpath">
+		<fileset file="${lib.dir}/*.jar" />
+		<fileset file="${tomcat.dir}/lib/*.jar" />
+		<pathelement path="${classes.dir}" />
+	</path>
+	<!-- 初始化任务 -->
+	<target name="init" depends="clean">
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.dir}/WEB-INF"/>
+		<mkdir dir="${war.dir}"/>
+	</target>
+	<!-- 编译
+
+	<target name="compile" depends="init" description="compile the source files">
+		<echo message="Java home: ${env.JAVA_HOME}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" target="1.6">
+			<classpath refid="master-classpath" />
+		</javac>
+	</target>
+	 -->
+
+	<!-- 打包成jar -->
+	<target name="pack" depends="init" description="make .jar file">
+		<copy todir="${dist.dir}/decorators/" filtering="yes" overwrite="${filter.overwrite}">
+			<fileset dir="WebContent/decorators/" />
+		</copy>
+		<copy todir="${dist.dir}/WEB-INF/" filtering="yes" overwrite="${filter.overwrite}">
+			<fileset dir="WebContent/WEB-INF/" />
+		</copy>
+		<copy todir="${dist.dir}/"  file="WebContent/home.html" filtering="yes" overwrite="${filter.overwrite}"> 
+		</copy>
+		<copy todir="${dist.dir}/"  file="WebContent/keywords.jsp" filtering="yes" overwrite="${filter.overwrite}"> 
+		</copy>
+		<copy todir="${dist.dir}/WEB-INF/" filtering="yes" overwrite="${filter.overwrite}">
+			<fileset dir="${build.dest}" />
+		</copy>
+		<copy todir="${dist.dir}/WEB-INF/classes/" filtering="yes" overwrite="${filter.overwrite}">
+			<fileset dir="resource-config/real/">
+			</fileset>
+		</copy>
+		<jar destfile="${war.dir}/ROOT.war" basedir="${dist.dir}" />
+	</target>
+
+
+	<target name="clean" description="清除打包用临时文件">
+		<!-- 
+		<delete dir="${classes.dir}" />
+		-->
+		<delete dir="${dist.dir}"/>
+		<delete dir="${war.dir}"/>
+		<delete>
+			<fileset dir="${build.dest}" includes="**/*.classes" />
+		</delete>
+		<delete dir="${buildwar.dest}" />
+	</target>
+	
+
+</project>
