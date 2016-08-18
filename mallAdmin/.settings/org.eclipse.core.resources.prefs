@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//resource-config/real/ipconfig.properties=UTF-8
+encoding//resource-config/real/itype-img.properties=UTF-8
+encoding//resource-config/real/jdbc-local.properties=UTF-8
+encoding//resource-config/real/log4j.properties=UTF-8
+encoding//resource-config/real/template-config.properties=UTF-8
+encoding//src/ipconfig.properties=UTF-8
+encoding//src/itype-img.properties=UTF-8
+encoding//src/template-config.properties=UTF-8
