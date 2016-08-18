@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+		<title>麦味旅行</title>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="MobileOptimized" content=""/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="renderer" content="webkit">
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<script src="js/scale.js"></script>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+
+	<body>
+		
+	  	<header data-am-widget="header" class="am-header">
+	      	<div class="hdIco am-header-left">
+	          	<a href="javascript:history.back();">
+					<i class="sprite icon-back"></i>
+		        </a>
+	      	</div>
+	      	<h1 class="am-header-title">填写信息</h1>      	
+	  	</header>
+	  	
+	  	<div class="g-body">	
+	  		<div class="orderDetail">
+	  			<form action="orderConfirm.html" class="am-form" id="form-verify-msg">
+			  		<div class="box" style="margin-top:20px;">
+			  			<h5 class="tit titIco">联系人信息</h5>
+			  			<div class="am-form am-form-horizontal" style="padding-top:6px;">
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">姓名</label>
+							    <div class="am-u-sm-9">
+							      	<input type="text" class="am-form-field" name="" placeholder="填写姓名（英文或中文）" required data-validation-message="请填写您的真实姓名">
+							    </div>
+						  	</div>
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">手机</label>
+							    <div class="am-u-sm-9">
+							      	<input type="text" class="am-form-field" name="" placeholder="填写常用手机号" required pattern="^[1][0-9]{10}$" data-validation-message="请输入正确的手机号码" >
+							    </div>
+						  	</div>
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">邮箱</label>
+							    <div class="am-u-sm-9">
+							      	<input type="email" class="am-form-field" name="" placeholder="填写常用邮箱地址" required data-validation-message="请填写正确的邮箱">
+							    </div>
+						  	</div>
+						</div>
+			  		</div>
+			  		<div class="box">
+			  			<h5 class="tit titIco">需要您提供的信息</h5>
+			  			<div class="am-form am-form-horizontal" style="padding-top:6px;">
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">抵达航班号</label>
+							    <div class="am-u-sm-9">
+							      	<input type="text" class="am-form-field" name="" placeholder="填写抵达航班号" required data-validation-message="请填写抵达航班号">
+							    </div>
+						  	</div>
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">接机时间</label>
+							    <div class="am-u-sm-9">			      	
+							    	<select class="am-form-field" name="" required data-validation-message="请选择接您的具体时间">
+							    		<option value="">填写接您的具体时间</option>
+							    		<option value="10:00">10:00</option>
+							    		<option value="10:10">10:10</option>
+							    		<option value="10:20">10:20</option>
+							    		<option value="10:30">10:30</option>
+							    		<option value="10:40">10:40</option>
+							    		<option value="10:50">10:50</option>
+							    		<option value="11:00">11:00</option>
+							    		<option value="11:10">11:10</option>
+							    		<option value="11:20">11:20</option>
+							    	</select>
+							    </div>
+						  	</div>
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">目的地地址</label>
+							    <div class="am-u-sm-9">
+							      	<input type="text" class="am-form-field" name="" placeholder="填写送达目的地地址" required data-validation-message="请填写送达目的地地址">
+							    </div>
+						  	</div>
+						</div>
+			  		</div>
+			  		<div class="box">
+			  			<h5 class="tit titIco">需要您提供的信息</h5>
+			  			<div class="am-form am-form-horizontal" style="padding-top:6px;">
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">出发航班号</label>
+							    <div class="am-u-sm-9">
+							      	<input type="text" class="am-form-field" name="" placeholder="填写出发航班号" required data-validation-message="请填写出发航班号">
+							    </div>
+						  	</div>
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">送机时间</label>
+							    <div class="am-u-sm-9">
+							      	<select class="am-form-field" name="" required data-validation-message="请选择接您的具体时间">
+							    		<option value="">填写接您的具体时间</option>
+							    		<option value="10:00">10:00</option>
+							    		<option value="10:10">10:10</option>
+							    		<option value="10:20">10:20</option>
+							    		<option value="10:30">10:30</option>
+							    		<option value="10:40">10:40</option>
+							    		<option value="10:50">10:50</option>
+							    		<option value="11:00">11:00</option>
+							    		<option value="11:10">11:10</option>
+							    		<option value="11:20">11:20</option>
+							    	</select>
+							    </div>
+						  	</div>
+						  	<div class="am-form-group">
+							    <label class="am-u-sm-3 am-form-label">出发地地址</label>
+							    <div class="am-u-sm-9">
+							      	<input type="text" class="am-form-field" name="" placeholder="填写接您的地址" required data-validation-message="请填写接您的地址">
+							    </div>
+						  	</div>
+						</div>
+			  		</div>
+			  		<div class="box" style="padding-bottom:60px;">
+			  			<h5 class="tit titIco">订单备注</h5>
+			  			<div class="am-form">
+				  			<div class="am-form-group" style="border-top:0;">
+						      	<textarea rows="3" name="" placeholder="可填，可不填"></textarea>
+						    </div>
+			  			</div>	
+			  		</div>	
+			  		<div class="detailBar detailBar1 f-box">
+			  			<p class="total f-flex color2">¥20200</p>
+				  		<button class="nextBtn" type="submit">下一步</button>
+				  	</div>
+				</div>  	
+	  		</div>
+		</div>
+	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/amazeui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/api.js"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+		<title>麦味旅行</title>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="MobileOptimized" content=""/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="renderer" content="webkit">
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<script src="js/scale.js"></script>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+
+	<body class="bgColor1">
+		
+		<header data-am-widget="header" class="am-header">
+	      	<div class="hdIco am-header-left">
+	          	<a href="javascript:history.back();">
+					<i class="sprite icon-back"></i>
+		        </a>
+	      	</div>
+	      	<h1 class="am-header-title">麦味旅行专属行程定制</h1>
+	  	</header>
+	  	
+	  	<div class="customForm">
+	  		<h1 class="title">正在收集您的信息......</h1>
+	  		<div class="form">
+	  			<form class="am-form" action="customOver.html" id="form-verify-msg">
+				    <div class="am-form-group">
+				      	<label class="am-form-label color2">输入目的地城市</label>
+				      	<input type="text" class="am-form-field" name="" placeholder="世界之大，总有一处，让你心生向往..." required data-validation-message="请填写您的目的地">
+				    </div>
+	  				<div class="am-form-group">
+				      	<label class="am-form-label color2">选择出发日期</label>
+				      	<div class="f-box boxH">
+				      		<select name="" required data-validation-message="请选择出发年月">
+						        <option value="">年份</option>
+						        <option value="2016">2016年</option>
+						        <option value="2017">2017年</option>
+					      	</select>
+					      	<select name="" required data-validation-message="请选择出发年月">
+						        <option value="">月份</option>
+						        <option value="1">1月</option>
+						        <option value="2">2月</option>
+						        <option value="3">3月</option>
+					      	</select>
+				      	</div>	      	
+				    </div>
+	  				<div class="am-form-group f-box">
+				      	<label class="am-form-label color2">游玩天数</label>
+		  				<select name="" required data-validation-message="请选择游玩天数">
+					        <option value="">选择出游天数</option>
+					        <option value="1">1天</option>
+					        <option value="2">2天</option>
+					        <option value="3">3天</option>
+				      	</select>
+				    </div>
+	  				<div class="am-form-group f-box">
+				      	<label class="am-form-label color2">游玩人数</label>
+		  				<select name="" required data-validation-message="请选择游玩人数">
+					        <option value="">请选择</option>
+					        <option value="1">1人</option>
+					        <option value="2">2人</option>
+					        <option value="3">3人</option>
+				      	</select>
+				    </div>
+	  				<div class="am-form-group f-box">
+				      	<label class="am-form-label">其中： 成人</label>
+		  				<select name="" required data-validation-message="请选择成人人数">
+					        <option value="">请选择</option>
+					        <option value="1">1人</option>
+					        <option value="2">2人</option>
+					        <option value="3">3人</option>
+				      	</select>
+				    </div>
+	  		 		<div class="am-form-group">
+				      	<textarea name="" rows="3" placeholder="若有60岁以上老人，请说明哦~"></textarea>
+				    </div>
+				    <div class="am-form-group">
+				      	<label class="am-form-label color2">输入您的预算</label>
+				      	<input type="text" class="am-form-field" name="" placeholder="输入大概预算，单位（¥）" required data-validation-message="请输入您的预算">
+				    </div>	
+				    <div class="am-form-group">
+				      	<label class="am-form-label color2">您的联系方式&nbsp;&nbsp;&nbsp;<span class="color3">*此项为必填项</span></label>
+				      	<input type="text" class="am-form-field" name="" placeholder="请留下常用号码" required pattern="^[1][0-9]{10}$" data-validation-message="请填写正确的联系手机号码">
+				    </div>				   
+				    <input type="submit" class="submitBtn" value="提交信息">
+				</form>
+	  		</div> 		
+	  	</div>
+	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/amazeui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/api.js"></script>
+		
+	</body>
+
+</html>

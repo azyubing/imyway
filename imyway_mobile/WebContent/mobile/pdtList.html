@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+		<title>麦味旅行</title>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="MobileOptimized" content=""/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="renderer" content="webkit">
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<script src="js/scale.js"></script>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+
+	<body class="topSticky">
+		
+	  	<header data-am-widget="header" class="am-header" id="dropdown-top-justify">
+	      	<div class="hdIco am-header-left">
+	          	<a href="javascript:history.back();">
+					<i class="sprite icon-back"></i>
+		        </a>
+	      	</div>
+	      	
+	  	</header>
+	  	
+	  	<div class="dropdownWrap f-box" id="dropdown-nav-justify">	  	
+		  	<div class="am-dropdown f-flex" data-am-dropdown="{justify: '#dropdown-nav-justify'}">
+			    <button class="am-btn am-dropdown-toggle f-toe">
+			    	<span class="paramCur" for="dropdown_dest">目的地</span>
+			    	<span class="am-icon-caret-down"></span>
+			    </button>
+			    <ul class="am-dropdown-content dropdownSelect" id="dropdown_dest" data-name="destination"></ul>
+		  	</div>
+		  	<div class="am-dropdown f-flex" data-am-dropdown="{justify: '#dropdown-nav-justify'}">
+			    <button class="am-btn am-dropdown-toggle f-toe">
+			    	<span class="paramCur" for="dropdown_serve">单项服务</span>
+			    	<span class="am-icon-caret-down"></span>
+			    </button>
+			    <ul class="am-dropdown-content dropdownSelect" id="dropdown_serve" data-name="service"></ul>
+		  	</div>
+		  	<div class="am-dropdown f-flex" data-am-dropdown="{justify: '#dropdown-nav-justify'}">
+			  	<button class="am-btn am-dropdown-toggle f-toe" data-am-dropdown-toggle>
+			    	<span class="paramCur" for="dropdown_sort">默认排序</span>
+			    	<span class="am-icon-caret-down"></span>
+			  	</button>
+			  	<ul class="am-dropdown-content dropdownSelect" id="dropdown_sort" data-name="orderBy"></ul>
+			</div>
+		</div>
+		<div class="dropdownMask" id="dropdownMask"></div>
+	  	
+	  	<div class="g-body">	  	
+	  		<ul class="pdtList" id="waterFall"><!--内部HTML由AJAX分页数据接口返回-->
+	  			<!--<li>
+	  				<a href="pdtDetail_hotel.html">
+	  					<img class="fullImg" src="demo/theme1.jpg" />
+	  					<p class="price">¥6999/起</p>
+	  					<div class="cnt">
+	  						<h5 class="tit"><span class="color1">【泰国 苏梅岛】</span>湄南海滩 W酒店</h5>
+	  						<p class="intro">W Retreat Koh Samui (苏梅岛W酒店)由著名泰国室内设计公司 P49 Deesign 与 MAPS 设计工作室精心打造</p>
+	  						<div class="info f-box">
+	  							<div class="label f-flex">商务 | XX | AAA</div>
+	  						</div>
+	  					</div>
+	  				</a>
+	  			</li>	  			
+	  			<li>
+	  				<a href="pdtDetail_villa.html">
+	  					<img class="fullImg" src="demo/theme2.jpg" />
+	  					<p class="price">¥7999/起</p>
+	  					<div class="cnt">
+	  						<h5 class="tit"><span class="color1">【泰国 苏梅岛】</span>水晶别墅</h5>
+	  						<p class="intro">水晶别墅是一项建筑和设计杰作，由建筑和室内设计师精诚合作完成。</p>
+	  						<div class="info f-box">
+	  							<div class="label f-flex">6卧室 | 家庭 | 婚礼 | 半山</div>
+	  						</div>
+	  					</div>
+	  				</a>
+	  			</li>
+	  			<li>
+	  				<a href="pdtDetail_meal.html">
+	  					<img class="fullImg" src="demo/theme3.jpg" />
+	  					<p class="price">¥4999/起</p>
+	  					<div class="cnt">
+	  						<h5 class="tit"><span class="color1">【日本 冲绳】</span>亲子奇幻之旅 5晚套餐</h5>
+	  						<p class="intro">描述描述描述描述描述描述描述描述描述描述</p>
+	  						<div class="info f-box">
+	  							<div class="label f-flex">4卧室 | 家庭 | 婚礼 | 海景</div>
+	  						</div>
+	  					</div>
+	  				</a>
+	  			</li>-->
+	  		</ul>  
+	  		<div class="pageLoading" id="pageLoading">
+	  			<span class="am-icon-spinner am-icon-spin"></span>
+	  			<span class="text"></span>
+	  		</div>
+		</div>
+	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/amazeui.min.js"></script>
+		<script src="js/amazeui.lazyload.min.js"></script>
+		<script src="js/artTemplate.js"></script>
+		<script src="js/template.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/app_pdt.js"></script>
+		
+	</body>
+
+</html>

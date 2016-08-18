@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+		<title>麦味旅行</title>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="MobileOptimized" content=""/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="renderer" content="webkit">
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<script src="js/scale.js"></script>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+
+	<body class="bgColor1">
+		
+	  	<header data-am-widget="header" class="am-header">
+	      	<div class="hdIco am-header-left">
+	          	<a href="javascript:history.back();">
+					<i class="sprite icon-back"></i>
+		        </a>
+	      	</div>
+	      	<h1 class="am-header-title">产品购买</h1>      	
+	  	</header>
+	  	
+	  	<div class="g-body">	
+	  		<div class="orderForm">
+	  			<form action="orderInfo.html" method="" onsubmit="return checkForm(this);">
+		  			<h1 class="title">出发日期&返程日期</h1>
+		  			<div class="datePicker datePicker_meal">
+		  				<input type="hidden" id="pdtCode" value="001"><!--产品code，因日历为通用组件，需要通过产品code来区分请求不同的产品单日价格数据-->
+						<div class="operate">
+							<div class="monthPrev" id="monthPrev"></div>
+							<div class="monthNext" id="monthNext"></div>
+							<div class="monthText"><span id="year"></span>年<span id="month"></span>月</div>
+						</div>
+						<ul class="week f-box">
+							<li>一</li>
+							<li>二</li>
+							<li>三</li>
+							<li>四</li>
+							<li>五</li>
+							<li>六</li>
+							<li>日</li>
+						</ul>
+						<div class="panel">
+							<div class="wrap">
+								<ul class="monthDate" id="monthDate"></ul>
+							</div>
+						</div>
+					</div>
+					
+		  			<h1 class="title">人数</h1>
+		  			<div class="counterWrap">
+		  				<div class="counterItem f-box">
+		  					<div class="f-box f-flex">
+		  						<div class="fs32">成人<em class="fs28">（17-99）</em></div>
+		  						<div class="price f-box f-flex" style="display:none;">
+		  							<label>¥ </label>
+		  							<input class="feeType" for="fee_adult" value="" readonly/>
+		  						</div>
+		  					</div>
+		  					<div class="counter f-box">
+		  						<div class="numBtn numReduce">-</div>
+		  						<input class="numField" value="0" name="" data-min="0" readonly>
+		  						<div class="numBtn numAdd">+</div>
+		  					</div>
+		  				</div>
+		  				<div class="counterItem f-box">
+		  					<div class="f-box f-flex">
+		  						<div class="fs32">儿童<em class="fs28">（9-16）</em></div>
+		  						<div class="price f-box f-flex" style="display:none;">
+		  							<label>¥ </label>
+		  							<input class="feeType" for="fee_child" value="" readonly/>
+		  						</div>
+		  					</div>
+		  					<div class="counter f-box">
+		  						<div class="numBtn numReduce">-</div>
+		  						<input class="numField" value="0" name="" data-min="0" readonly>
+		  						<div class="numBtn numAdd">+</div>
+		  					</div>
+		  				</div>
+		  				<div class="counterItem f-box">
+		  					<div class="f-box f-flex">
+		  						<div class="fs32">婴儿<em class="fs28">（0-8）</em></div>
+		  						<div class="price f-box f-flex" style="display:none;">
+		  							<label>¥ </label>
+		  							<input class="feeType" for="fee_baby" value="" readonly/>
+		  						</div>
+		  					</div>
+		  					<div class="counter f-box">
+		  						<div class="numBtn numReduce">-</div>
+		  						<input class="numField" value="0" name="" data-min="0" readonly>
+		  						<div class="numBtn numAdd">+</div>
+		  					</div>
+		  				</div>
+		  			</div>
+		  			
+		  			<div class="detailBar detailBar1 f-box">
+			  			<p class="total f-flex color2">¥<span id="feeTotal">0</span></p>
+				  		<input class="nextBtn" type="submit" value="下一步">
+				  		
+				  		<input type="hidden" id="feild_daysRange" name="" value="" data-tipNull="请选择出发日期"><!--行程天数-->
+				  		<input type="hidden" id="feild_dateStart" name="" value="" data-tipNull="请选择出发日期"><!--出发日期-->
+				  		<input type="hidden" id="feild_dateEnd" name="" value="" data-tipNull="请选择出发日期"><!--返程日期-->
+				  		<input type="hidden" id="feild_feeTotal" name="" value="0"  data-reg="/^[1-9]\d*$/" data-tipReg="请添加人数"/><!--总费用-->
+				  	</div>
+				</form>  	
+	  		</div>	  		
+		</div>
+	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/amazeui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/api.js"></script>
+		<script src="js/app_meal.js"></script>
+		
+	</body>
+
+</html>

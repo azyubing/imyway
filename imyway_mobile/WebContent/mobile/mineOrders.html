@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+		<title>麦味旅行</title>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="MobileOptimized" content=""/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="renderer" content="webkit">
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<script src="js/scale.js"></script>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+
+	<body class="topSticky">
+		
+	  	<header data-am-widget="header" class="am-header">
+	      	<div class="hdIco am-header-left">
+	          	<a href="javascript:history.back();">
+					<i class="sprite icon-back"></i>
+		        </a>
+	      	</div>
+	      	<h1 class="am-header-title">我的订单</h1>      	
+	  	</header>
+	  	
+	  	<div class="filtrateWrap" id="dropdown-nav-justify">
+      		<div class="am-dropdown f-flex" data-am-dropdown="{justify: '#dropdown-nav-justify'}">
+			    <button class="am-btn am-dropdown-toggle f-toe">更多筛选<span class="am-icon-caret-down"></span></button>
+			    <div class="am-dropdown-content">
+			    	<div class="filtrateItem">
+			    		<h5 class="tit">按类型显示 查看</h5>
+			    		<div class="list filtrateList" id="filtrate_theme" data-name="theme"><!--data-name值为AJAX分页提交参数的key，可随意修改,以下同理-->
+			    			<a href="全部" class="am-active">全部</a><!--a标签中的href值为对应key的value值,以下同理-->
+			    			<a href="套餐">套餐</a>
+			    			<a href="酒店">酒店</a>
+			    			<a href="别墅">别墅</a>
+			    			<a href="交通">交通</a>
+			    			<a href="娱乐">娱乐</a>
+			    		</div>
+			    	</div>
+			    	<div class="filtrateItem">
+			    		<h5 class="tit">按时间 查看</h5>
+			    		<div class="list filtrateList" id="filtrate_serve" data-name="sort">
+			    			<a href="全部" class="am-active">全部</a>
+			    			<a href="下单时间">下单时间</a>
+			    			<a href="出发时间">出发时间</a>
+			    		</div>
+			    	</div>
+			    	<div class="filtrateItem">
+			    		<h5 class="tit">按目的地 查看</h5>
+			    		<div class="list filtrateList" id="filtrate_dest" data-name="dest">
+			    			<a href="全部" class="am-active">全部</a>
+			    			<a href="印度尼西亚">印度尼西亚</a>
+			    			<a href="马来西亚">马来西亚</a>
+			    			<a href="泰国">泰国</a>
+			    			<a href="中国">中国</a>
+			    			<a href="新加坡">新加坡</a>
+			    			<a href="30日本6">日本</a>
+			    			<a href="阿联酋">阿联酋</a>
+			    			<a href="马尔代夫">马尔代夫</a>
+			    			<a href="英国">英国</a>
+			    			<a href="毛里求斯">毛里求斯</a>
+			    			<a href="塞舌尔">塞舌尔</a>
+			    			<a href="美国">美国</a>
+			    			<a href="斐济">斐济</a>
+			    			<a href="大溪地">大溪地</a>
+			    			<a href="澳大利亚">澳大利亚</a>
+			    		</div>
+			    	</div>
+			    	<button class="filtrateBtn" id="filtrateBtn">开始筛选</button>
+			    </div>			    
+		  	</div>
+      	</div>
+      	<div class="dropdownMask" id="dropdownMask"></div>
+	  	
+	  	<div class="g-body">	
+	  		<ul class="orderTab am-nav am-nav-pills am-nav-justify" id="orderTab" data-name="ordertype"><!--data-name值为AJAX分页提交参数的key，可随意修改-->
+			  	<li class="am-active"><a href="全部订单">全部订单</a></li>
+			  	<li><a href="待付款">待付款</a></li>
+			  	<li><a href="已付款">已付款</a></li>
+			  	<li><a href="已完成">已完成</a></li>
+			</ul>
+			<ul class="orderList" id="waterFall" data-url="abc.php"><!--内部HTML由AJAX分页数据接口返回-->
+				<!--<li class="orderItem">	
+	  				<a class="link" href="mineOrderDetail.html">
+	  					<p class="state">交易取消</p>
+	  					<p class="name f-toe">泰国双城（曼谷＋芭提雅）6天5晚自由行</p>
+	  					<p class="dest">泰国</p>
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order1.jpg" />
+	  							<p class="type">套餐</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>出行日期：2016/01/12</p>
+	  							<p>返程日期：2016/01/15</p>
+	  							<p>人数：3成人，1儿童</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/03</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 16677</span></p>
+	  					</div>
+	  				</a>							
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH" disabled="disabled">关闭交易</a>
+  					</div>
+	  			</li>
+	  			<li class="orderItem">	
+	  				<a class="link" href="mineOrderDetail.html">
+	  					<p class="state">待付款</p>
+	  					<p class="name f-toe">泰国双城（曼谷＋芭提雅）6天5晚自由行</p>
+	  					<p class="dest">泰国</p>
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order1.jpg" />
+	  							<p class="type">套餐</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>出行日期：2016/01/12</p>
+	  							<p>返程日期：2016/01/15</p>
+	  							<p>人数：3成人，1儿童</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/03</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 16677</span></p>
+	  					</div>
+	  				</a>							
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH orderCancel" href="abc.php">取消订单</a>
+  						<a class="btn btnS" href="orderPay.html">去付款</a>
+  					</div>
+	  			</li>
+	  			<li class="orderItem">	
+	  				<a class="link" href="mineOrderDetail.html">
+		  				<p class="state">待付款</p>
+	  					<p class="name f-toe">泰国双城（曼谷＋芭提雅）6天5晚自由行</p>
+	  					<p class="dest">泰国</p>
+	  				</a>	
+  					<div class="cnt1 f-box">
+  						<div class="img">
+  							<img src="demo/order1.jpg" />
+  							<p class="type">套餐</p>
+  						</div>
+  						<div class="info">
+  							<p>出行日期：2016/01/12</p>
+  							<p>返程日期：2016/01/15</p>
+  							<p>人数：3成人，1儿童</p>
+  						</div>
+  					</div>
+  					<div class="cnt2 f-box">
+  						<p class="f-flex f-otvc">下单时间：2016/01/03</p>
+  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 16677</span></p>
+  					</div>
+  					<div class="orderOperate f-box">
+  						<a class="btn btnS" disabled="disabled">处理中...</a>
+  					</div>
+	  			</li>	
+	  			<li class="orderItem">
+	  				<a class="link" href="mineOrderDetail.html">
+		  				<p class="state">已支付</p>
+	  					<p class="name f-toe">【泰国 苏梅岛】 西拉别墅</p>
+	  					<p class="dest">泰国</p>
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order2.jpg" />
+	  							<p class="type">别墅</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>入住日期：2016/01/28</p>
+	  							<p>退房日期：2016/02/02</p>
+	  							<p>数量：1栋</p>
+	  							<p class="remark">5卧室，可住10人 + 3晚</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/03</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 10000</span></p>
+	  					</div>
+	  				</a>	
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH orderRefund" data-am-modal="{target:'#modal_orderRefund'}">申请退款</a>
+  					</div>
+	  			</li>	
+	  			<li class="orderItem">
+	  				<a class="link" href="mineOrderDetail.html">
+		  				<p class="state">退款中</p>
+	  					<p class="name f-toe">新西兰霍比特人电影拍摄地霍比屯+怀托摩萤火虫.....</p>
+	  					<p class="dest">新西兰</p>	
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order3.jpg" />
+	  							<p class="type">娱乐</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>开始日期：2016/01/28</p>
+	  							<p>游玩时间：15:50</p>
+	  							<p>人数：2成人，2儿童</p>
+	  							<p class="remark">潜水+攀冰</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/03</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 3259</span></p>
+	  					</div>
+	  				</a>
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH" disabled="disabled">申请退款</a>
+  					</div>
+	  			</li>	
+	  			<li class="orderItem">	
+	  				<a class="link" href="mineOrderDetail.html">
+		  				<p class="state">交易关闭</p>
+	  					<p class="name f-toe">【曼谷廊曼国际机场-曼谷市区 接机/送机 （单程/......</p>
+	  					<p class="dest">泰国</p>
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order1.jpg" />
+	  							<p class="type">交通</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>使用日期：2016/01/12,2016/01/16</p>
+	  							<p>接机/送机时间：早上10:00，早上10:00</p>
+	  							<p>数量<span class="remark">（总计）</span>：2辆</p>
+	  							<p class="remark">接机 + 经济型5座，送机+经济型5座</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/01</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 278</span></p>
+	  					</div>
+	  				</a>	
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH orderDelete">删除订单</a>
+  					</div>
+	  			</li>	
+	  			<li class="orderItem">	
+	  				<a class="link" href="mineOrderDetail.html">
+		  				<p class="state">已完成</p>
+	  					<p class="name f-toe">新西兰霍比特人电影拍摄地霍比屯+怀托摩萤火虫.....</p>
+	  					<p class="dest">新西兰</p>	
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order2.jpg" />
+	  							<p class="type">娱乐</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>开始日期：2016/01/28</p>
+	  							<p>游玩时间：10:30</p>
+	  							<p>人数：2成人，2儿童</p>
+	  							<p class="remark">潜水+攀冰+自助午餐</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/01</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 3259</span></p>
+	  					</div>
+	  				</a>
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH orderDelete" href="abc.php">删除订单</a>
+  						<a class="btn btnS" href="review.html">去评价</a>
+  					</div>
+	  			</li>
+	  			<li class="orderItem">	
+	  				<a class="link" href="mineOrderDetail.html">
+		  				<p class="state">已完成</p>
+	  					<p class="name f-toe">新西兰霍比特人电影拍摄地霍比屯+怀托摩萤火虫.....</p>
+	  					<p class="dest">新西兰</p>	
+	  					<div class="cnt1 f-box">
+	  						<div class="img">
+	  							<img src="demo/order3.jpg" />
+	  							<p class="type">娱乐</p>
+	  						</div>
+	  						<div class="info">
+	  							<p>开始日期：2016/01/28</p>
+	  							<p>游玩时间：10:30</p>
+	  							<p>人数：2成人，2儿童</p>
+	  							<p class="remark">潜水+攀冰+自助午餐</p>
+	  						</div>
+	  					</div>
+	  					<div class="cnt2 f-box">
+	  						<p class="f-flex f-otvc">下单时间：2016/01/01</p>
+	  						<p class="total f-flex f-otvc">合计：<span class="color2">¥ 3259</span></p>
+	  					</div>
+	  				</a>
+  					<div class="orderOperate f-box">
+  						<a class="btn btnH orderDelete" href="abc.php">删除订单</a>
+  					</div>
+	  			</li>-->		
+	  		</ul>     		
+	  		<div class="pageLoading" id="pageLoading">
+	  			<span class="am-icon-spinner am-icon-spin"></span>
+	  			<span class="text"></span>
+	  		</div>
+		</div>
+		
+		<div class="am-modal modal_orderRefund" tabindex="-1" id="modal_orderRefund">
+			<div class="am-modal-dialog">
+				<span class="sprite smileIco"></span>
+			  	<div class="cnt">目前申请退款服务只开通线下。<br/>麻烦客官拨打电话，<br/>直接联系小麦哦~</div>
+			  	<div class="btns">
+			  		<a class="btnTel" href="tel:4006456701">400 6456 701</a>
+			  		<button class="btnClose" data-am-modal-close>取消操作</button>
+			  	</div>
+			</div>  	
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/amazeui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/api.js"></script>
+		
+	</body>
+
+</html>
